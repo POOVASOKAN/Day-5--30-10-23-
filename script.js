@@ -1,116 +1,105 @@
-//Q1. Creating class Movie
+//For the given JSON iterate over all the loops (for, for in , for of)
+// Assuming entering the details of the employees in the DB 
+const data = {
+    "employeeDetails": [
+      {"id": 101, "firstName": "Kumar", "age": 25},
+      {"id": 102, "firstName": "Steve", "age": 30},
+      {"id": 103, "firstName": "John", "age": 35},
+      {"id": 104, "firstName": "Elsa", "age": 27}
+    ]
+  };
+  
+  console.log("Below is the output using For loop");
+  for (let i=0; i<data.employeeDetails.length;i++) {
+    console.log("ID is " + data.employeeDetails[i].id);
+    console.log("Firstname is " + data.employeeDetails[i].firstName);
+    console.log("Age is " + data.employeeDetails[i].age);
+  }
+  console.log("--------------------------------------");
+  
+  console.log("Below is the output using for of loop");
+  for (let user of data.employeeDetails) {
+    console.log("ID is " + user.id);
+    console.log("Firstname is " + user.firstName);
+    console.log("Age is " + user.age);
+  }
+  console.log("--------------------------------------");
+  
+  console.log("Below is the output using for in loop");
+  for (let index in data.employeeDetails) {
+    console.log("Id is " + data.employeeDetails[index].id);
+    console.log("Firstname is " + data.employeeDetails[index].firstName);
+    console.log("Age is " + data.employeeDetails[index].age);
+  }
+  
 
-class Movie {
-    constructor(title, studio, rating = "PG") {
-        this.title = title;
-        this.studio = studio;
-        this.rating = rating;
-    }
-}
-
-// Create an instance of the Movie class
-const movieInstance = new Movie("Casino Royale", "Eon Productions", "PG-13");
-console.log("Movie Title:", movieInstance.title);
-console.log("Studio:", movieInstance.studio);
-console.log("Rating:", movieInstance.rating);
-
-// Q2.
-class Circle //class 
+  // Creating Resume in JSON Format 
+  console.log("--------------------------------------");
+  console.log("Poovazhahi Asokan CV in JSON Format")
+  const resume = 
+  {
+    "personalInformation": 
     {
-        constructor(radius, colour) // constructor rad & colour 
+      "firstName": "Poovazhahi",
+      "lastName": "Asokan",
+      "email": "poovasokan@gmail.com",
+      "address": "London, United Kingdom",
+    "linkedIn": "https://www.linkedin.com/in/poovazhahi-asokan-029a3a112/",
+    "github": "https://github.com/POOVASOKAN"
+    },
+    "objective": "A motivated designer with 3 years of experience looking to join a forward-thinking company to contribute to innovative projects and collaborate with a dynamic team.",
+    "education": 
+    [
         {
-         this.radius = radius; 
-         this.colour = colour;
-        }
-        get radiuscircle()
+          "degree": "Master of Food Systems & Management",
+          "institution": "Cranfield University",
+          "graduation": "2021"
+        },
         {
-         return this.radius;
-        }
-        set radiuscircle(radius)
-        {
-         this.radius = radius 
-        }
-        get colourcircle()
-        {
-            return this.colour
-        }
-        set colourcircle(colour)
-        {
-            this.colour = colour;
-        }
-        get toString()
-        {
-            return`circle[radius= ${this.radius} , colour = ${this.colour}]" ]`
-        }
-        get areaCircle()
-        {
-            return Math.PI*this.radius *this.radius; //pir2
-        }
-        get circumCircle()
-        {
-            return 2* Math.PI * this.radius;
-        }
-    }
-    var obj = new Circle (1.0,"red");
-
-console.log(obj.radiuscircle) // get radius circle 
-obj.radiuscircle = 2.3
-console.log(obj.radiuscircle) // set radius circle 
-
-console.log(obj.colourcircle) // get colour circle 
-obj.colourcircle = "blue" // set colour circle 
-console.log(obj.colourcircle);
-
-console.log(obj.toString);
-
-console.log("Area:", obj.areaCircle);
-
-console.log("Circumference:", obj.circumCircle);
-
-//Q3.
-class Person {
-    constructor(firstname, age, gender, salary = 50) // constant value set 
-     {
-        this.firstname = firstname;
-        this.age = age;
-        this.gender = gender;
-        this.salary = salary;
-    }
-}
-
-const obj1 = new Person("John", "27", "male", "40000 INR");
-const obj2 = new Person("Mike", "35", "male", "50000 INR");
-const obj3 = new Person("Elsa", "29", "female"); 
-const obj4 = new Person("Sarah", "31", "female", "45000 INR");
-const obj5 = new Person("David", "42", "male", "60000 INR");
-
-console.log("Person 1:", obj1);
-console.log("Person 2:", obj2);
-console.log("Person 3:", obj3);
-console.log("Person 4:", obj4);
-console.log("Person 5:", obj5);
-
-console.log("First Names:");
-console.log(obj1.firstname, obj2.firstname, obj3.firstname, obj4.firstname, obj5.firstname);
-
-//Q4.class UberPriceCalculator 
-    class UberPriceCal
-     {
-        constructor(baseFare, costPerMile, costPerMinute) 
-        {
-            this.baseFare = baseFare;
-            this.costPerMile = costPerMile;
-            this.costPerMinute = costPerMinute;
-        }
-
-        calculatePrice(distance, duration) {
-            const fare = this.baseFare + (distance * this.costPerMile) + (duration * this.costPerMinute);
-            return fare;
-        }
-    }
-    const calculator = new UberPriceCal(2.5, 1.5, 0.25);
-    const distance = 20; // 20 miles
-    const duration = 25; // 25 minutes
-    const totalPrice = calculator.calculatePrice(distance, duration);
-    console.log("Total Uber Price:", totalPrice);
-
+            "degree": "Master of Food technology",
+            "institution": "Amity University",
+            "graduation": "2017"
+          },
+          {
+            "degree": "Bachelor of Food Engineering",
+            "institution": "Avinashilingam University",
+            "graduation": "2015"
+          }
+        ],
+        "workExperience": 
+        [
+            {
+                "position": "COO",
+                "company": "Omeava Design Studio",
+                "responsibilities": "Orchestrated operational strategies, streamlined processes, and, in a freelance capacity as a Web Designer, led the migration of an intranet to MS Viva, creating responsive websites and enhancing user experiences."
+              },
+              {
+                "position": "Product Designer",
+                "company": "Apex Technologies ",
+                "responsibilities": [
+                  "Developed and maintained the company website, leading to a 20% increase in online sales.",
+                  "Collaborated with cross-functional teams to design software solutions, increasing overall productivity by 15%."
+                ]
+              }
+            ],
+            "awardsAndAchievements": [
+                {
+                    "title": "Chapter Authorship",
+                    "bookTitle": "Sustainable Food Waste Management",
+                    "chapter": "Concepts & Innovations",
+                    "description": "Authored a chapter shedding light on concepts and innovative practices in sustainable food waste management."
+                  },
+                  {
+                    "title": "Chapter Contribution",
+                    "topic": "Emerging Technologies in Food Science",
+                    "description": "Contributed expertise through a dedicated chapter discussing the implications and advancements of emerging technologies in the field of food science."
+                  },
+                  {
+                    "title": "Gold Medalist",
+                    "givenBy": "Prime Minister of India",
+                    "description": "Awarded for exemplary contributions in a specific domain."
+                  }
+                ]
+            };
+            
+            console.log(resume);
